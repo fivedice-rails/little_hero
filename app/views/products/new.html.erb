@@ -1,0 +1,7 @@
+<form action="<%= products_path %>" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  이름 : <input type="string" name="name">
+  <br>
+  설명 : <input type="text" name="desc">
+  <button type="submit">제출</button>
+</form>

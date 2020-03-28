@@ -1,0 +1,70 @@
+<h3> 판매량순 </h3>
+<table> 
+    <tr>
+        <th> 순위 </th>
+        <th> 이름 </th>
+    </tr>
+
+
+    <% @sales_ranks.each_with_index do |v, i| %>
+    <tr>
+        <td> <%= i+1 %>위 </td>
+        <td> <%= v.name %></td>
+    </tr>
+    <% end %>
+</table>
+
+
+<h3> 평점순 </h3>
+<table> 
+    <tr>
+        <th> 순위 </th>
+        <th> 이름 </th>
+        <th> 평점 </th>
+    </tr>
+
+
+    <% @grade_ranks.each_with_index do |v, i| %>
+    <tr>
+        <td> <%= i+1 %>위 </td>
+        <td> <%= v.product.name %></td>
+        <td> <%= "%0.2f"% v.average_grade %> </td>
+    </tr>
+    <% end %>
+</table>
+
+
+
+<h3> 후기수순 </h3>
+<table> 
+    <tr>
+        <th> 순위 </th>
+        <th> 이름 </th>
+        <th> 후기수 </th>
+    </tr>
+
+
+    <% @vote_ranks.each_with_index do |v, i| %>
+    <tr>
+        <td> <%= i+1 %>위 </td>
+        <td> <%= v.product.name %></td>
+        <td> <%= v.vote_count %> </td>
+    </tr>
+    <% end %>
+</table>
+
+<table> 
+    <% @gender_male_ranks.each_with_index do |v, i| %>
+    <tr>
+        <td> <%= i+1 %>위 </td>
+        <td> <%= v.user_name %></td>
+        <td> <%= v.vote_count %> </td>
+  </tr>
+    <% end %>
+    </table>
+
+<br><a href="/ranks/gender"> 성별 후기수 보러가기 </a>
+<br><a href="<%=root_path%>"> 돌아가기 </a>
+
+
+
